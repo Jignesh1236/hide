@@ -16,42 +16,10 @@ function hideStuff() {
     el.style.display = "none";
   });
 
-  // document.querySelectorAll("ytd-rich-grid-renderer").forEach(function (el) {
-  //   el.style.display = "none";
-  // });
-
-setInterval(function () {
-
-  const allowedChannels = [
-    "CodeWithHarry",
-    "Apna College"
-  ];
-
-  document
-  .querySelectorAll("ytd-rich-item-renderer")
-  .forEach(function (video) {
-
-    const channel =
-      video.querySelector(
-        "ytd-channel-name"
-      );
-
-    if (!channel) {
-      return;
-    }
-
-    const name =
-      channel.innerText.trim();
-
-    if (
-      !allowedChannels.includes(name)
-    ) {
-      video.style.display = "none";
-    }
-
+  document.querySelectorAll("ytd-rich-grid-renderer").forEach(function (el) {
+    el.style.display = "none";
   });
 
-}, 1000);
   //check
 
   if (document.getElementById("ext-drawer-1")) {
