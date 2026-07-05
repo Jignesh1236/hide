@@ -1344,6 +1344,7 @@ function showWhitelistOverlay(channel) {
   overlay.id = "ext-whitelist-overlay";
   overlay.style = "position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.95);color:#fff;z-index:2147483647;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:Roboto,Arial,sans-serif;padding:20px;box-sizing:border-box;";
   overlay.innerHTML =
+    "<img src='" + chrome.runtime.getURL("imgs/wa.svg") + "' style='width:300px;margin-bottom:20px;' alt='Warning'>" +
     "<div style='font-size:22px;margin-bottom:10px;'>\u26A0 This channel is not whitelisted</div>" +
     "<div style='font-size:15px;opacity:0.8;margin-bottom:20px;'>" + (channel.name || "") + "</div>" +
     "<div style='display:flex;gap:12px;'>" +
