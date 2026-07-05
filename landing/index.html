@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Focus Mode, Stay on YouTube, Not in the Rabbit Hole</title>
-    <meta name="description" content="Focus Mode hides YouTube's distractions — related videos, comments, Shorts, notifications and the endless home feed — so you watch what you came for and nothing else.">
+    <meta name="description" content="Focus Mode hides YouTube's distractions , related videos, comments, Shorts, notifications and the endless home feed , so you watch what you came for and nothing else.">
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
@@ -253,6 +253,48 @@
         .step h4 { margin: 0 0 8px 0; font-size: 16px; }
         .step p { margin: 0; font-size: 14px; opacity: 0.7; line-height: 1.55; }
 
+        /* Browser grid */
+        .browser-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        .browser-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+        }
+        .browser-card:hover {
+            transform: translateY(-6px);
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(255,255,255,0.18);
+        }
+        .browser-icon {
+            font-size: 42px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, rgba(62,166,255,0.2), rgba(143,111,255,0.2));
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .browser-card h4 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+        }
+        .browser-card p {
+            margin: 0;
+            font-size: 13px;
+            opacity: 0.7;
+        }
+
         /* Popup preview replica */
         .preview-wrap {
             display: flex;
@@ -342,7 +384,7 @@
 
         <div class="hero-content">
             <h1 class="hero-title">Watch what you came for.<br><span>Skip everything else.</span></h1>
-            <p class="hero-sub">You opened YouTube for one 10-minute tutorial. Three hours later you're watching a raccoon steal a sandwich. We fixed that. Focus Mode nukes the related videos, comments, Shorts and the infinite doom-scroll home feed — so you watch your video and get back to pretending you have your life together.</p>
+            <p class="hero-sub">You opened YouTube for one 10-minute tutorial. Three hours later you're watching a raccoon steal a sandwich. We fixed that. Focus Mode nukes the related videos, comments, Shorts and the infinite doom-scroll home feed , so you watch your video and get back to pretending you have your life together.</p>
 
             <div class="hero-ctas">
                 <a href="#get-started" class="btn btn-primary"><i class="fa-brands fa-chrome"></i> Add to Chrome</a>
@@ -352,12 +394,12 @@
             <div class="mini-popup">
                 <div class="mini-stat">
                     <div class="label">Session Time</div>
-                    <div class="value" id="sessionTimer">00:14:52</div>
+                    <div class="value" id="sessionTimer">00:00:00</div>
                 </div>
                 <div class="mini-divider"></div>
                 <div class="mini-stat">
                     <div class="label">Videos Watched</div>
-                    <div class="value" id="videoCount">3</div>
+                    <div class="value" id="videoCount">0</div>
                 </div>
             </div>
         </div>
@@ -372,7 +414,7 @@
             <div class="feature-card">
                 <div class="feature-icon"><i class="fa-solid fa-ban"></i></div>
                 <h3>One-click Focus Mode</h3>
-                <p>Hide related videos, comments, Shorts links, notifications and the recommendation grid instantly — toggle it back off whenever you actually want to browse.</p>
+                <p>Hide related videos, comments, Shorts links, notifications and the recommendation grid instantly , toggle it back off whenever you actually want to browse.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fa-solid fa-stopwatch"></i></div>
@@ -387,7 +429,7 @@
             <div class="feature-card">
                 <div class="feature-icon"><i class="fa-solid fa-list-check"></i></div>
                 <h3>Channel whitelist</h3>
-                <p>Only need YouTube for a few channels — a course, a client, a creator? Whitelist them and everything else stays out of view.</p>
+                <p>Only need YouTube for a few channels , a course, a client, a creator? Whitelist them and everything else stays out of view.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fa-solid fa-note-sticky"></i></div>
@@ -397,7 +439,7 @@
             <div class="feature-card">
                 <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
                 <h3>Private by design</h3>
-                <p>No accounts, no servers, no tracking. Everything — timers, notes, whitelist — is stored locally in your browser.</p>
+                <p>No accounts, no servers, no tracking. Everything , timers, notes, whitelist , is stored locally in your browser.</p>
             </div>
         </div>
     </section>
@@ -409,7 +451,7 @@
             <div class="step">
                 <div class="step-num">1</div>
                 <h4>Install the extension</h4>
-                <p>Add Focus Mode to Chrome in a few seconds — no sign-up required.</p>
+                <p>Add Focus Mode to Chrome in a few seconds , no sign-up required.</p>
             </div>
             <div class="step">
                 <div class="step-num">2</div>
@@ -427,7 +469,7 @@
     <section>
         <div class="section-eyebrow">Take a look</div>
         <h2 class="section-title">Everything at a glance</h2>
-        <p class="section-sub">The popup shows your session timer and video count the moment you click the icon — matching the calm, glass look of the extension itself.</p>
+        <p class="section-sub">The popup shows your session timer and video count the moment you click the icon , matching the calm, glass look of the extension itself.</p>
         <div class="preview-wrap">
             <div class="popup-replica">
                 <h4>Hi user, what should we dive into today?</h4>
@@ -449,16 +491,50 @@
         </div>
     </section>
 
+    <section>
+        <div class="section-eyebrow">Browser Support</div>
+        <h2 class="section-title">Works on all Chromium browsers</h2>
+        <p class="section-sub">Focus Mode isn't just for Chrome , it works on any Chromium-based browser. Install it once, use it everywhere.</p>
+        
+        <div class="browser-grid">
+            <div class="browser-card">
+                <div class="browser-icon"><i class="fa-brands fa-chrome"></i></div>
+                <h4>Google Chrome</h4>
+                <p>Full support</p>
+            </div>
+            <div class="browser-card">
+                <div class="browser-icon"><i class="fa-brands fa-edge"></i></div>
+                <h4>Microsoft Edge</h4>
+                <p>Full support</p>
+            </div>
+            <div class="browser-card">
+                <div class="browser-icon"><i class="fa-brands fa-brave"></i></div>
+                <h4>Brave</h4>
+                <p>Full support</p>
+            </div>
+            <div class="browser-card">
+                <div class="browser-icon"><i class="fa-brands fa-opera"></i></div>
+                <h4>Opera</h4>
+                <p>Full support</p>
+            </div>
+            <div class="browser-card">
+                <div class="browser-icon"><i class="fa-solid fa-ghost"></i></div>
+                <h4>Other Chromium</h4>
+                <p>Compatible</p>
+            </div>
+        </div>
+    </section>
+
     <section id="get-started" style="padding-top: 0;">
         <div class="cta-band">
             <h2>Ready to stop scrolling?</h2>
-            <p>Load Focus Mode into Chrome in under a minute — it's free and works entirely offline.</p>
+            <p>Load Focus Mode into Chrome in under a minute , it's free and works entirely offline.</p>
             <a href="https://github.com/Jignesh1236/focus-mode" target="_blank" class="btn btn-primary"><i class="fa-brands fa-github"></i> Get it on GitHub</a>
         </div>
     </section>
 
     <footer>
-        <p>Focus Mode — an open-source Chrome extension by <a href="https://github.com/jignesh1236" target="_blank">Jignesh</a>. Licensed under MIT.</p>
+        <p>Focus Mode , an open-source Chrome extension by <a href="https://github.com/jignesh1236" target="_blank">Jignesh</a>. Licensed under MIT.</p>
     </footer>
 
     <script>
@@ -473,18 +549,38 @@
             video.src = videoSrc;
         }
 
-        // Fake ticking stats in the hero mini-popup just for visual life
-        (function () {
-            let seconds = 14 * 60 + 52;
-            const el = document.getElementById('sessionTimer');
-            setInterval(() => {
-                seconds++;
-                const h = String(Math.floor(seconds / 3600)).padStart(2, '0');
-                const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
-                const s = String(seconds % 60).padStart(2, '0');
-                el.textContent = `${h}:${m}:${s}`;
-            }, 1000);
-        })();
+        // Real timer and video count from extension storage
+        function formatTime(ms) {
+            const totalSeconds = Math.floor(ms / 1000);
+            const hours = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
+            const minutes = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0');
+            const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+            return `${hours}:${minutes}:${seconds}`;
+        }
+
+        function updateStats() {
+            if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.local) {
+                chrome.storage.local.get(['totalPlayTimeMs', 'videoCount'], function(data) {
+                    const timerEl = document.getElementById('sessionTimer');
+                    const countEl = document.getElementById('videoCount');
+                    
+                    if (timerEl) {
+                        timerEl.textContent = formatTime(data.totalPlayTimeMs || 0);
+                    }
+                    if (countEl) {
+                        countEl.textContent = data.videoCount || 0;
+                    }
+                });
+            }
+        }
+
+        // Initial load
+        updateStats();
+
+        // Update every second if extension is available
+        if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.local) {
+            setInterval(updateStats, 1000);
+        }
     </script>
 
 </body>
