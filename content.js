@@ -1,3 +1,11 @@
+function isExtensionAlive() {
+  return (
+    typeof chrome != "undefined" &&
+    chrome.runtime &&
+    chrome.runtime.id
+  );
+}
+
 function hideStuff() {
 
   document.querySelectorAll("#related").forEach(function (el) {
@@ -876,7 +884,9 @@ loadNotes();
 
 setInterval(function () {
 
-  createMarkers();
+  if (isExtensionAlive()) {
+    createMarkers();
+  }
 
 }, 2000);
 
@@ -925,6 +935,10 @@ function showStuff() {
 
 function checkMode() {
 
+  if (!isExtensionAlive()) {
+    return;
+  }
+
   try {
 
     chrome.storage.local.get(["mode"], function (data) {
@@ -960,6 +974,9 @@ let timerUpdateInterval;
 let lastWatchedVideoId = null;
 
 function initSessionTimer() {
+  if (!isExtensionAlive()) {
+    return;
+  }
   chrome.storage.local.get(["sessionStartTime", "totalPlayTimeMs", "lastActiveTime", "watchedVideoIds", "videoCount"], function(data) {
     const now = Date.now();
     
@@ -989,6 +1006,9 @@ function getCurrentVideoId() {
 
 // Track video watch
 function trackVideoWatch() {
+  if (!isExtensionAlive()) {
+    return;
+  }
   const videoId = getCurrentVideoId();
   if (!videoId || videoId === lastWatchedVideoId) return;
   
@@ -1018,13 +1038,18 @@ function monitorUrlChanges() {
     }
   });
   
-  observer.observe(document.body, { subtree: true, childList: true });
+  if (document.body) {
+    observer.observe(document.body, { subtree: true, childList: true });
+  }
   
   // Also check initial page
   trackVideoWatch();
 }
 
 function startPlayTimer() {
+  if (!isExtensionAlive()) {
+    return;
+  }
   if (isTimerRunning) return;
   isTimerRunning = true;
   
@@ -1054,6 +1079,9 @@ function startPlayTimer() {
 }
 
 function stopPlayTimer() {
+  if (!isExtensionAlive()) {
+    return;
+  }
   if (!isTimerRunning) return;
   isTimerRunning = false;
   
@@ -1103,11 +1131,15 @@ function monitorVideoPlayback() {
 }
 
 // Update last active time every 30 seconds
-setInterval(function() {
-  chrome.storage.local.set({
-    lastActiveTime: Date.now()
-  });
-}, 30000);
+if (isExtensionAlive()) {
+  setInterval(function() {
+    if (isExtensionAlive()) {
+      chrome.storage.local.set({
+        lastActiveTime: Date.now()
+      });
+    }
+  }, 30000);
+}
 
 initSessionTimer();
 monitorVideoPlayback();
@@ -1115,7 +1147,9 @@ monitorUrlChanges();
 
 setInterval(function () {
 
-  checkMode();
+  if (isExtensionAlive()) {
+    checkMode();
+  }
 
 }, 1000);
 
@@ -1124,9 +1158,15 @@ setInterval(function () {
 
 document.addEventListener("yt-navigate-start", function () {
 
-  if (window.location.pathname.startsWith("/shorts/")) {
-    window.location.replace("https://www.youtube.com");
+  if (!isExtensionAlive()) {
+    return;
   }
+
+  chrome.storage.local.get(["mode"], function (data) {
+    if (data.mode === "hide" && window.location.pathname.startsWith("/shorts/")) {
+      window.location.replace("https://www.youtube.com");
+    }
+  });
 
 });
 
@@ -1243,6 +1283,9 @@ function isChannelWhitelisted(list, channel) {
 }
 
 function toggleCurrentChannelWhitelist(channel) {
+  if (!isExtensionAlive()) {
+    return;
+  }
   chrome.storage.local.get(["whitelistChannels"], function (data) {
     var list = data.whitelistChannels || [];
     var index = -1;
@@ -1265,6 +1308,9 @@ function toggleCurrentChannelWhitelist(channel) {
 }
 
 function refreshWhitelistButton(channel) {
+  if (!isExtensionAlive()) {
+    return;
+  }
   var btn = document.getElementById("ext-whitelist-toggle");
   if (!btn) {
     return;
@@ -1321,6 +1367,9 @@ function removeWhitelistOverlay() {
 }
 
 function ensureWhitelistButton() {
+  if (!isExtensionAlive()) {
+    return;
+  }
   // Check if mode is "show" - if so, disable whitelist system
   chrome.storage.local.get(["mode"], function (data) {
     if (data.mode === "show") {
@@ -1370,7 +1419,9 @@ function ensureWhitelistButton() {
 
 setInterval(function () {
 
-  ensureWhitelistButton();
+  if (isExtensionAlive()) {
+    ensureWhitelistButton();
+  }
 
 }, 1500);
 
