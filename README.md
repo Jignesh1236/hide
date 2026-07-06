@@ -3,7 +3,7 @@
 
 <div align="center" style="background-image: url('imgs/bg.png'); background-size: cover; background-position: center; padding: 60px 20px; border-radius: 20px; margin: 20px 0; font-family: 'Varela Round', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
 
-# 🎯 YT Focus Mode
+# 🎯 BingeBlocker
 
 **Transform your YouTube experience into a productive learning environment**
 
