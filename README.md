@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" width="72" alt="YouTube Logo">
+
 # BingeBlocker
 
 **Transform your YouTube experience into a productive learning environment**
@@ -52,29 +54,111 @@
 
 ## 🚀 Installation
 
-### For Developers
+### ⚙️ Prerequisites
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Jignesh1236/focus-mode.git
-   cd focus-mode
-   ```
+| Requirement | Details |
+|-------------|---------|
+| **Browser** | Google Chrome 88+ (or any Chromium-based browser — Edge, Brave, Opera) |
+| **OS** | Windows / macOS / Linux |
+| **Git** *(optional)* | Only needed if cloning via terminal |
 
-2. **Open Chrome Extensions**
-   - Navigate to `chrome://extensions/`
-   - Enable **Developer Mode** (top right corner)
+---
 
-3. **Load the Extension**
-   - Click **Load Unpacked**
-   - Select the project folder
-   - Extension is now active!
+### Method 1 — Manual Install (Recommended for Developers)
 
-4. **Reload after changes**
-   - Click the reload button on the extension card after making changes
+#### Step 1 · Get the Code
 
-### For End Users
+**Option A — Clone via Git**
+```bash
+git clone https://github.com/Jignesh1236/focus-mode.git
+cd focus-mode
+```
 
-> Coming soon to Chrome Web Store!
+**Option B — Download ZIP**
+1. Go to the [repository](https://github.com/Jignesh1236/focus-mode)
+2. Click **Code → Download ZIP**
+3. Extract the ZIP to any folder on your computer
+
+---
+
+#### Step 2 · Open Chrome Extensions Page
+
+Open a new tab and go to:
+
+```
+chrome://extensions/
+```
+
+> 💡 You can also reach it via **Menu (⋮) → More Tools → Extensions**
+
+---
+
+#### Step 3 · Enable Developer Mode
+
+In the top-right corner of the Extensions page, toggle **Developer mode** ON.
+
+```
+┌─────────────────────────────────────────────┐
+│  Extensions                 Developer mode ●│
+└─────────────────────────────────────────────┘
+```
+
+Three new buttons will appear: `Load unpacked` · `Pack extension` · `Update`
+
+---
+
+#### Step 4 · Load the Extension
+
+1. Click **Load unpacked**
+2. In the file picker, navigate to and select the **project folder** (the one containing `manifest.json`)
+3. Click **Select Folder**
+
+✅ BingeBlocker will now appear in your extensions list.
+
+---
+
+#### Step 5 · Pin to Toolbar *(optional but recommended)*
+
+1. Click the **puzzle piece icon** 🧩 in the Chrome toolbar
+2. Find **BingeBlocker** in the list
+3. Click the **📌 pin icon** to keep it always visible
+
+---
+
+#### Step 6 · Test It
+
+1. Open [YouTube](https://www.youtube.com)
+2. Click the **BingeBlocker** icon in the toolbar
+3. Click **Hide** — distractions disappear instantly!
+
+---
+
+#### 🔄 Updating After Code Changes
+
+Whenever you edit the source files:
+
+1. Go back to `chrome://extensions/`
+2. Find BingeBlocker and click the **↻ reload icon**
+3. Refresh any open YouTube tabs
+
+---
+
+### Method 2 — Chrome Web Store
+
+> 🚧 **Coming Soon** — Chrome Web Store listing.  
+> Until then, use the manual install method above.
+
+---
+
+### 🛠️ Troubleshooting
+
+| Problem | Fix |
+|---------|-----|
+| Extension not showing up | Make sure the folder you selected contains `manifest.json` |
+| Panels not appearing on YouTube | Reload the extension at `chrome://extensions/` and refresh YouTube |
+| "Manifest version not supported" error | Update Chrome to the latest version |
+| Extension icon missing | Click the 🧩 puzzle icon and pin BingeBlocker |
+| Changes not reflecting | Click the reload ↻ button on the extension card |
 
 ---
 
